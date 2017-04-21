@@ -6,6 +6,7 @@
 * [注解配置](#注解配置)
 * [java配置](#java配置)
 * [Spring事件](#Spring事件)
+* [SpringAOP](#SpringAOP)
 #### spring 核心
 spring 框架提供了20多个模块，spring的架构图如下：
 ![spring 架构图](pics/arch.png)
@@ -364,6 +365,162 @@ public class MyStartEventListener implements ApplicationListener<ContextStartedE
 }
 ```
 
-####springAOP
+####SpringAOP
 
+第一种方式，纯xml配置。
+首先在xml文件中加入aop的校验
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:aop="http://www.springframework.org/schema/aop" 
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+    http://www.springframework.org/schema/aop 
+    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">
 
+   <!-- bean definition & AOP specific configuration -->
+
+</beans>
+```
+其次需要加载aspect的jar包
+```xml
+<!-- aop支持 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<!-- aspectj支持 -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>${org.aspectj-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>${org.aspectj-version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/aopalliance/aopalliance -->
+		<dependency>
+			<groupId>aopalliance</groupId>
+			<artifactId>aopalliance</artifactId>
+			<version>1.0</version>
+		</dependency>
+```
+最后是声明一个aspect。在xml中的配置如下
+
+```xml
+<aop:config>
+   <aop:aspect id="myAspect" ref="aBean">
+   <aop:pointcut id="businessService"
+      expression="execution(* com.xyz.myapp.service.*.*(..))"/>
+       <aop:before pointcut-ref="businessService" 
+         method="doRequiredTask"/>
+      <!-- an after advice definition -->
+      <aop:after pointcut-ref="businessService" 
+         method="doRequiredTask"/>
+      <!-- an after-returning advice definition -->
+      <!--The doRequiredTask method must have parameter named retVal -->
+      <aop:after-returning pointcut-ref="businessService"
+         returning="retVal"
+         method="doRequiredTask"/>
+      <!-- an after-throwing advice definition -->
+      <!--The doRequiredTask method must have parameter named ex -->
+      <aop:after-throwing pointcut-ref="businessService"
+         throwing="ex"
+         method="doRequiredTask"/>
+      <!-- an around advice definition -->
+      <aop:around pointcut-ref="businessService" 
+         method="doRequiredTask"/>
+   </aop:aspect>
+</aop:config>
+<bean id="aBean" class="...">
+...
+</bean>
+```
+
+第二种方式，xml+aspect注解
+首先通过Aspect声明他是一个切面
+```java
+@Aspect
+public class Logging {
+   /** Following is the definition for a pointcut to select
+    *  all the methods available. So advice will be called
+    *  for all the methods.
+    */
+   @Pointcut("execution(* com.tutorialspoint.*.*(..))")
+   private void selectAll(){}
+   /** 
+    * This is the method which I would like to execute
+    * before a selected method execution.
+    */
+   @Before("selectAll()")
+   public void beforeAdvice(){
+      System.out.println("Going to setup student profile.");
+   }
+   /** 
+    * This is the method which I would like to execute
+    * after a selected method execution.
+    */
+   @After("selectAll()")
+   public void afterAdvice(){
+      System.out.println("Student profile has been setup.");
+   }
+   /** 
+    * This is the method which I would like to execute
+    * when any method returns.
+    */
+   @AfterReturning(pointcut = "selectAll()", returning="retVal")
+   public void afterReturningAdvice(Object retVal){
+      System.out.println("Returning:" + retVal.toString() );
+   }
+   /**
+    * This is the method which I would like to execute
+    * if there is an exception raised by any method.
+    */
+   @AfterThrowing(pointcut = "selectAll()", throwing = "ex")
+   public void AfterThrowingAdvice(IllegalArgumentException ex){
+      System.out.println("There has been an exception: " + ex.toString());   
+   }  
+}
+```
+其次，配置xml文件
+```xml
+<aop:aspectj-autoproxy/>  <!-- 开始spring对aspect的支持  -->
+<bean id="logging" class="com.tutorialspoint.Logging"/> <!-- 定义aspectj 的Bean  -->
+```
+
+第三种方式。纯代码配置（其实和上面一样，只不过多了基于java的配置而已）
+首先声明aspect，并且注册为bean
+```java
+@Aspect
+@Component
+public class AnnotationLogAspect {
+	@Pointcut("@annotation(com.xixi.bean.Student)")
+	public void annotationPointCut(){}
+	
+	@Before("execution(* com.xixi.bean.*.*(..))")
+	public void before(JoinPoint joinpoint){
+		System.out.println("注解式aop"+joinpoint.getKind());
+	}
+	//pointcut-ref="selectAll" returning="retVal" method="afterReturningAdvice" 
+	@AfterReturning(pointcut="annotationPointCut",returning="retVal")
+	public void afterreturn(){
+		
+	}
+}
+```
+其次定义java配置
+```java
+
+@Configuration
+@ComponentScan("com.xixi.bean,com.xixi.aspect")
+@EnableAspectJAutoProxy // 对AspectJ支持//如果是在xml中，则xml配置为 <aop:aspectj-autoproxy/>
+public class MyConfig {
+
+}
+
+```

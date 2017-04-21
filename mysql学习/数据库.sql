@@ -122,3 +122,12 @@ create table my_unique(
 )charset utf8;
 
 alter table 表名 add unique key(number);
+
+
+-- 索引
+-- 几乎所有的索引建立在字段上
+-- 提升查询数据的效率
+-- 约束数据的有效性
+-- 主键索引primary key ，唯一索引unique key ，全文索引fulltext index，普通索引index
+
+

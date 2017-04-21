@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>spring 入门.html</title>
+  <meta name="generator" content="Haroopad 0.13.1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>div.oembedall-githubrepos{border:1px solid #DDD;border-radius:4px;list-style-type:none;margin:0 0 10px;padding:8px 10px 0;font:13.34px/1.4 helvetica,arial,freesans,clean,sans-serif;width:452px;background-color:#fff}div.oembedall-githubrepos .oembedall-body{background:-moz-linear-gradient(center top,#FAFAFA,#EFEFEF);background:-webkit-gradient(linear,left top,left bottom,from(#FAFAFA),to(#EFEFEF));border-bottom-left-radius:4px;border-bottom-right-radius:4px;border-top:1px solid #EEE;margin-left:-10px;margin-top:8px;padding:5px 10px;width:100%}div.oembedall-githubrepos h3{font-size:14px;margin:0;padding-left:18px;white-space:nowrap}div.oembedall-githubrepos p.oembedall-description{color:#444;font-size:12px;margin:0 0 3px}div.oembedall-githubrepos p.oembedall-updated-at{color:#888;font-size:11px;margin:0}div.oembedall-githubrepos ul.oembedall-repo-stats{border:none;float:right;font-size:11px;font-weight:700;padding-left:15px;position:relative;z-index:5;margin:0}div.oembedall-githubrepos ul.oembedall-repo-stats li{border:none;color:#666;display:inline-block;list-style-type:none;margin:0!important}div.oembedall-githubrepos ul.oembedall-repo-stats li a{background-color:transparent;border:none;color:#666!important;background-position:5px -2px;background-repeat:no-repeat;border-left:1px solid #DDD;display:inline-block;height:21px;line-height:21px;padding:0 5px 0 23px}div.oembedall-githubrepos ul.oembedall-repo-stats li:first-child a{border-left:medium none;margin-right:-3px}div.oembedall-githubrepos ul.oembedall-repo-stats li a:hover{background:5px -27px no-repeat #4183C4;color:#FFF!important;text-decoration:none}div.oembedall-githubrepos ul.oembedall-repo-stats li:first-child a:hover{border-bottom-left-radius:3px;border-top-left-radius:3px}ul.oembedall-repo-stats li:last-child a:hover{border-bottom-right-radius:3px;border-top-right-radius:3px}span.oembedall-closehide{background-color:#aaa;border-radius:2px;cursor:pointer;margin-right:3px}div.oembedall-container{margin-top:5px;text-align:left}.oembedall-ljuser{font-weight:700}.oembedall-ljuser img{vertical-align:bottom;border:0;padding-right:1px}.oembedall-stoqembed{border-bottom:1px dotted #999;float:left;overflow:hidden;width:730px;line-height:1;background:#FFF;color:#000;font-family:Arial,Liberation Sans,DejaVu Sans,sans-serif;font-size:80%;text-align:left;margin:0;padding:0}.oembedall-stoqembed a{color:#07C;text-decoration:none;margin:0;padding:0}.oembedall-stoqembed a:hover{text-decoration:underline}.oembedall-stoqembed a:visited{color:#4A6B82}.oembedall-stoqembed h3{font-family:Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif;font-size:130%;font-weight:700;margin:0;padding:0}.oembedall-stoqembed .oembedall-reputation-score{color:#444;font-size:120%;font-weight:700;margin-right:2px}.oembedall-stoqembed .oembedall-user-info{height:35px;width:185px}.oembedall-stoqembed .oembedall-user-info .oembedall-user-gravatar32{float:left;height:32px;width:32px}.oembedall-stoqembed .oembedall-user-info .oembedall-user-details{float:left;margin-left:5px;overflow:hidden;white-space:nowrap;width:145px}.oembedall-stoqembed .oembedall-question-hyperlink{font-weight:700}.oembedall-stoqembed .oembedall-stats{background:#EEE;margin:0 0 0 7px;padding:4px 7px 6px;width:58px}.oembedall-stoqembed .oembedall-statscontainer{float:left;margin-right:8px;width:86px}.oembedall-stoqembed .oembedall-votes{color:#555;padding:0 0 7px;text-align:center}.oembedall-stoqembed .oembedall-vote-count-post{font-size:240%;color:#808185;display:block;font-weight:700}.oembedall-stoqembed .oembedall-views{color:#999;padding-top:4px;text-align:center}.oembedall-stoqembed .oembedall-status{margin-top:-3px;padding:4px 0;text-align:center;background:#75845C;color:#FFF}.oembedall-stoqembed .oembedall-status strong{color:#FFF;display:block;font-size:140%}.oembedall-stoqembed .oembedall-summary{float:left;width:635px}.oembedall-stoqembed .oembedall-excerpt{line-height:1.2;margin:0;padding:0 0 5px}.oembedall-stoqembed .oembedall-tags{float:left;line-height:18px}.oembedall-stoqembed .oembedall-tags a:hover{text-decoration:none}.oembedall-stoqembed .oembedall-post-tag{background-color:#E0EAF1;border-bottom:1px solid #3E6D8E;border-right:1px solid #7F9FB6;color:#3E6D8E;font-size:90%;line-height:2.4;margin:2px 2px 2px 0;padding:3px 4px;text-decoration:none;white-space:nowrap}.oembedall-stoqembed .oembedall-post-tag:hover{background-color:#3E6D8E;border-bottom:1px solid #37607D;border-right:1px solid #37607D;color:#E0EAF1}.oembedall-stoqembed .oembedall-fr{float:right}.oembedall-stoqembed .oembedall-statsarrow{background-image:url(http://cdn.sstatic.net/stackoverflow/img/sprites.png?v=3);background-repeat:no-repeat;overflow:hidden;background-position:0 -435px;float:right;height:13px;margin-top:12px;width:7px}.oembedall-facebook1{border:1px solid #1A3C6C;padding:0;font:13.34px/1.4 verdana;width:500px}.oembedall-facebook2{background-color:#627add}.oembedall-facebook2 a{color:#e8e8e8;text-decoration:none}.oembedall-facebookBody{background-color:#fff;vertical-align:top;padding:5px}.oembedall-facebookBody .contents{display:inline-block;width:100%}.oembedall-facebookBody div img{float:left;margin-right:5px}div.oembedall-lanyard{-webkit-box-shadow:none;-webkit-transition-delay:0s;-webkit-transition-duration:.4000000059604645s;-webkit-transition-property:width;-webkit-transition-timing-function:cubic-bezier(0.42,0,.58,1);background-attachment:scroll;background-clip:border-box;background-color:transparent;background-image:none;background-origin:padding-box;border-width:0;box-shadow:none;color:#112644;display:block;float:left;font-family:'Trebuchet MS',Trebuchet,sans-serif;font-size:16px;height:253px;line-height:19px;margin:0;max-width:none;min-height:0;outline:#112644 0;overflow-x:visible;overflow-y:visible;padding:0;position:relative;text-align:left;vertical-align:baseline;width:804px}div.oembedall-lanyard .tagline{font-size:1.5em}div.oembedall-lanyard .wrapper{overflow:hidden;clear:both}div.oembedall-lanyard .split{float:left;display:inline}div.oembedall-lanyard .prominent-place .flag:active,div.oembedall-lanyard .prominent-place .flag:focus,div.oembedall-lanyard .prominent-place .flag:hover,div.oembedall-lanyard .prominent-place .flag:link,div.oembedall-lanyard .prominent-place .flag:visited{float:left;display:block;width:48px;height:48px;position:relative;top:-5px;margin-right:10px}div.oembedall-lanyard .place-context{font-size:.889em}div.oembedall-lanyard .prominent-place .sub-place{display:block}div.oembedall-lanyard .prominent-place{font-size:1.125em;line-height:1.1em;font-weight:400}div.oembedall-lanyard .main-date{color:#8CB4E0;font-weight:700;line-height:1.1}div.oembedall-lanyard .first{width:48.57%;margin:0 0 0 2.857%}.mermaid .label{color:#333}.node circle,.node polygon,.node rect{fill:#cde498;stroke:#13540c;stroke-width:1px}.edgePath .path{stroke:green;stroke-width:1.5px}.cluster rect{fill:#cdffb2;rx:40;stroke:#6eaa49;stroke-width:1px}.cluster text{fill:#333}.actor{stroke:#13540c;fill:#cde498}text.actor{fill:#000;stroke:none}.actor-line{stroke:grey}.messageLine0{stroke-width:1.5;stroke-dasharray:"2 2";marker-end:"url(#arrowhead)";stroke:#333}.messageLine1{stroke-width:1.5;stroke-dasharray:"2 2";stroke:#333}#arrowhead{fill:#333}#crosshead path{fill:#333!important;stroke:#333!important}.messageText{fill:#333;stroke:none}.labelBox{stroke:#326932;fill:#cde498}.labelText,.loopText{fill:#000;stroke:none}.loopLine{stroke-width:2;stroke-dasharray:"2 2";marker-end:"url(#arrowhead)";stroke:#326932}.note{stroke:#6eaa49;fill:#fff5ad}.noteText{fill:#000;stroke:none;font-family:'trebuchet ms',verdana,arial;font-size:14px}.section{stroke:none;opacity:.2}.section0,.section2{fill:#6eaa49}.section1,.section3{fill:#fff;opacity:.2}.sectionTitle0,.sectionTitle1,.sectionTitle2,.sectionTitle3{fill:#333}.sectionTitle{text-anchor:start;font-size:11px;text-height:14px}.grid .tick{stroke:lightgrey;opacity:.3;shape-rendering:crispEdges}.grid path{stroke-width:0}.today{fill:none;stroke:red;stroke-width:2px}.task{stroke-width:2}.taskText{text-anchor:middle;font-size:11px}.taskTextOutsideRight{fill:#000;text-anchor:start;font-size:11px}.taskTextOutsideLeft{fill:#000;text-anchor:end;font-size:11px}.taskText0,.taskText1,.taskText2,.taskText3{fill:#fff}.task0,.task1,.task2,.task3{fill:#487e3a;stroke:#13540c}.taskTextOutside0,.taskTextOutside1,.taskTextOutside2,.taskTextOutside3{fill:#000}.active0,.active1,.active2,.active3{fill:#cde498;stroke:#13540c}.activeText0,.activeText1,.activeText2,.activeText3{fill:#000!important}.done0,.done1,.done2,.done3{stroke:grey;fill:lightgrey;stroke-width:2}.doneText0,.doneText1,.doneText2,.doneText3{fill:#000!important}.crit0,.crit1,.crit2,.crit3{stroke:#f88;fill:red;stroke-width:2}.activeCrit0,.activeCrit1,.activeCrit2,.activeCrit3{stroke:#f88;fill:#cde498;stroke-width:2}.doneCrit0,.doneCrit1,.doneCrit2,.doneCrit3{stroke:#f88;fill:lightgrey;stroke-width:2;cursor:pointer;shape-rendering:crispEdges}.activeCritText0,.activeCritText1,.activeCritText2,.activeCritText3,.doneCritText0,.doneCritText1,.doneCritText2,.doneCritText3{fill:#000!important}.titleText{text-anchor:middle;font-size:18px;fill:#000}text{font-family:'trebuchet ms',verdana,arial;font-size:14px}html{height:100%}body{margin:0!important;padding:5px 20px 26px!important;background-color:#fff;font-family:"Lucida Grande","Segoe UI","Apple SD Gothic Neo","Malgun Gothic","Lucida Sans Unicode",Helvetica,Arial,sans-serif;font-size:.9em;overflow-x:hidden;overflow-y:auto}br,h1,h2,h3,h4,h5,h6{clear:both}hr.page{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x;border:0;height:3px;padding:0}hr.underscore{border-top-style:dashed!important}body >:first-child{margin-top:0!important}img.plugin{box-shadow:0 1px 3px rgba(0,0,0,.1);border-radius:3px}iframe{border:0}figure{-webkit-margin-before:0;-webkit-margin-after:0;-webkit-margin-start:0;-webkit-margin-end:0}kbd{border:1px solid #aaa;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;-moz-box-shadow:1px 2px 2px #ddd;-webkit-box-shadow:1px 2px 2px #ddd;box-shadow:1px 2px 2px #ddd;background-color:#f9f9f9;background-image:-moz-linear-gradient(top,#eee,#f9f9f9,#eee);background-image:-o-linear-gradient(top,#eee,#f9f9f9,#eee);background-image:-webkit-linear-gradient(top,#eee,#f9f9f9,#eee);background-image:linear-gradient(top,#eee,#f9f9f9,#eee);padding:1px 3px;font-family:inherit;font-size:.85em}.oembeded .oembed_photo{display:inline-block}img[data-echo]{margin:25px 0;width:100px;height:100px;background:url(../img/ajax.gif) center center no-repeat #fff}.spinner{display:inline-block;width:10px;height:10px;margin-bottom:-.1em;border:2px solid rgba(0,0,0,.5);border-top-color:transparent;border-radius:100%;-webkit-animation:spin 1s infinite linear;animation:spin 1s infinite linear}.spinner:after{content:'';display:block;width:0;height:0;position:absolute;top:-6px;left:0;border:4px solid transparent;border-bottom-color:rgba(0,0,0,.5);-webkit-transform:rotate(45deg);transform:rotate(45deg)}@-webkit-keyframes spin{to{-webkit-transform:rotate(360deg)}}@keyframes spin{to{transform:rotate(360deg)}}p.toc{margin:0!important}p.toc ul{padding-left:10px}p.toc>ul{padding:10px;margin:0 10px;display:inline-block;border:1px solid #ededed;border-radius:5px}p.toc li,p.toc ul{list-style-type:none}p.toc li{width:100%;padding:0;overflow:hidden}p.toc li a::after{content:"."}p.toc li a:before{content:"• "}p.toc h5{text-transform:uppercase}p.toc .title{float:left;padding-right:3px}p.toc .number{margin:0;float:right;padding-left:3px;background:#fff;display:none}input.task-list-item{margin-left:-1.62em}.markdown{font-family:"Hiragino Sans GB","Microsoft YaHei",STHeiti,SimSun,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",'Segoe UI',AppleSDGothicNeo-Medium,'Malgun Gothic',Verdana,Tahoma,sans-serif;padding:20px}.markdown a{text-decoration:none;vertical-align:baseline}.markdown a:hover{text-decoration:underline}.markdown h1{font-size:2.2em;font-weight:700;margin:1.5em 0 1em}.markdown h2{font-size:1.8em;font-weight:700;margin:1.275em 0 .85em}.markdown h3{font-size:1.6em;font-weight:700;margin:1.125em 0 .75em}.markdown h4{font-size:1.4em;font-weight:700;margin:.99em 0 .66em}.markdown h5{font-size:1.2em;font-weight:700;margin:.855em 0 .57em}.markdown h6{font-size:1em;font-weight:700;margin:.75em 0 .5em}.markdown h1+p,.markdown h1:first-child,.markdown h2+p,.markdown h2:first-child,.markdown h3+p,.markdown h3:first-child,.markdown h4+p,.markdown h4:first-child,.markdown h5+p,.markdown h5:first-child,.markdown h6+p,.markdown h6:first-child{margin-top:0}.markdown hr{border:1px solid #ccc}.markdown p{margin:1em 0;word-wrap:break-word}.markdown ol{list-style-type:decimal}.markdown li{display:list-item;line-height:1.4em}.markdown blockquote{margin:1em 20px}.markdown blockquote>:first-child{margin-top:0}.markdown blockquote>:last-child{margin-bottom:0}.markdown blockquote cite:before{content:'\2014 \00A0'}.markdown .code{border-radius:3px;word-wrap:break-word}.markdown pre{border-radius:3px;word-wrap:break-word;border:1px solid #ccc;overflow:auto;padding:.5em}.markdown pre code{border:0;display:block}.markdown pre>code{font-family:Consolas,Inconsolata,Courier,monospace;font-weight:700;white-space:pre;margin:0}.markdown code{border-radius:3px;word-wrap:break-word;border:1px solid #ccc;padding:0 5px;margin:0 2px}.markdown img{max-width:100%}.markdown mark{color:#000;background-color:#fcf8e3}.markdown table{padding:0;border-collapse:collapse;border-spacing:0;margin-bottom:16px}.markdown table tr td,.markdown table tr th{border:1px solid #ccc;margin:0;padding:6px 13px}.markdown table tr th{font-weight:700}.markdown table tr th>:first-child{margin-top:0}.markdown table tr th>:last-child{margin-bottom:0}.markdown table tr td>:first-child{margin-top:0}.markdown table tr td>:last-child{margin-bottom:0}@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700);.haroopad{padding:20px;color:#222;font-size:15px;font-family:"Roboto Condensed",Tauri,"Hiragino Sans GB","Microsoft YaHei",STHeiti,SimSun,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",'Segoe UI',AppleSDGothicNeo-Medium,'Malgun Gothic',Verdana,Tahoma,sans-serif;background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}.haroopad a{color:#3269a0}.haroopad a:hover{color:#4183c4}.haroopad h2{border-bottom:1px solid #e6e6e6}.haroopad h6{color:#777}.haroopad hr{border:1px solid #e6e6e6}.haroopad blockquote>code,.haroopad h1>code,.haroopad h2>code,.haroopad h3>code,.haroopad h4>code,.haroopad h5>code,.haroopad h6>code,.haroopad li>code,.haroopad p>code,.haroopad td>code{font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;font-size:85%;background-color:rgba(0,0,0,.02);padding:.2em .5em;border:1px solid #efefef}.haroopad pre>code{font-size:1em;letter-spacing:-1px;font-weight:700}.haroopad blockquote{border-left:4px solid #e6e6e6;padding:0 15px;color:#777}.haroopad table{background-color:#fafafa}.haroopad table tr td,.haroopad table tr th{border:1px solid #e6e6e6}.haroopad table tr:nth-child(2n){background-color:#f2f2f2}.hljs{display:block;overflow-x:auto;padding:.5em;background:#fdf6e3;color:#657b83;-webkit-text-size-adjust:none}.diff .hljs-header,.hljs-comment,.hljs-doctype,.hljs-javadoc,.hljs-pi,.lisp .hljs-string{color:#93a1a1}.css .hljs-tag,.hljs-addition,.hljs-keyword,.hljs-request,.hljs-status,.hljs-winutils,.method,.nginx .hljs-title{color:#859900}.hljs-command,.hljs-dartdoc,.hljs-hexcolor,.hljs-link_url,.hljs-number,.hljs-phpdoc,.hljs-regexp,.hljs-rules .hljs-value,.hljs-string,.hljs-tag .hljs-value,.tex .hljs-formula{color:#2aa198}.css .hljs-function,.hljs-built_in,.hljs-chunk,.hljs-decorator,.hljs-id,.hljs-identifier,.hljs-localvars,.hljs-title,.vhdl .hljs-literal{color:#268bd2}.hljs-attribute,.hljs-class .hljs-title,.hljs-constant,.hljs-link_reference,.hljs-parent,.hljs-type,.hljs-variable,.lisp .hljs-body,.smalltalk .hljs-number{color:#b58900}.css .hljs-pseudo,.diff .hljs-change,.hljs-attr_selector,.hljs-cdata,.hljs-header,.hljs-pragma,.hljs-preprocessor,.hljs-preprocessor .hljs-keyword,.hljs-shebang,.hljs-special,.hljs-subst,.hljs-symbol,.hljs-symbol .hljs-string{color:#cb4b16}.hljs-deletion,.hljs-important{color:#dc322f}.hljs-link_label{color:#6c71c4}.tex .hljs-formula{background:#eee8d5}.MathJax_Hover_Frame{border-radius:.25em;-webkit-border-radius:.25em;-moz-border-radius:.25em;-khtml-border-radius:.25em;box-shadow:0 0 15px #83A;-webkit-box-shadow:0 0 15px #83A;-moz-box-shadow:0 0 15px #83A;-khtml-box-shadow:0 0 15px #83A;border:1px solid #A6D!important;display:inline-block;position:absolute}.MathJax_Hover_Arrow{position:absolute;width:15px;height:11px;cursor:pointer}#MathJax_About{position:fixed;left:50%;width:auto;text-align:center;border:3px outset;padding:1em 2em;background-color:#DDD;color:#000;cursor:default;font-family:message-box;font-size:120%;font-style:normal;text-indent:0;text-transform:none;line-height:normal;letter-spacing:normal;word-spacing:normal;word-wrap:normal;white-space:nowrap;float:none;z-index:201;border-radius:15px;-webkit-border-radius:15px;-moz-border-radius:15px;-khtml-border-radius:15px;box-shadow:0 10px 20px gray;-webkit-box-shadow:0 10px 20px gray;-moz-box-shadow:0 10px 20px gray;-khtml-box-shadow:0 10px 20px gray;filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}.MathJax_Menu{position:absolute;background-color:#fff;color:#000;width:auto;padding:2px;border:1px solid #CCC;margin:0;cursor:default;font:menu;text-align:left;text-indent:0;text-transform:none;line-height:normal;letter-spacing:normal;word-spacing:normal;word-wrap:normal;white-space:nowrap;float:none;z-index:201;box-shadow:0 10px 20px gray;-webkit-box-shadow:0 10px 20px gray;-moz-box-shadow:0 10px 20px gray;-khtml-box-shadow:0 10px 20px gray;filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}.MathJax_MenuItem{padding:2px 2em;background:0 0}.MathJax_MenuArrow{position:absolute;right:.5em;color:#666}.MathJax_MenuActive .MathJax_MenuArrow{color:#fff}.MathJax_MenuArrow.RTL{left:.5em;right:auto}.MathJax_MenuCheck{position:absolute;left:.7em}.MathJax_MenuCheck.RTL{right:.7em;left:auto}.MathJax_MenuRadioCheck{position:absolute;left:1em}.MathJax_MenuRadioCheck.RTL{right:1em;left:auto}.MathJax_MenuLabel{padding:2px 2em 4px 1.33em;font-style:italic}.MathJax_MenuRule{border-top:1px solid #CCC;margin:4px 1px 0}.MathJax_MenuDisabled{color:GrayText}.MathJax_MenuActive{background-color:Highlight;color:HighlightText}.MathJax_Menu_Close{position:absolute;width:31px;height:31px;top:-15px;left:-15px}#MathJax_Zoom{position:absolute;background-color:#F0F0F0;overflow:auto;display:block;z-index:301;padding:.5em;border:1px solid #000;margin:0;font-weight:400;font-style:normal;text-align:left;text-indent:0;text-transform:none;line-height:normal;letter-spacing:normal;word-spacing:normal;word-wrap:normal;white-space:nowrap;float:none;box-shadow:5px 5px 15px #AAA;-webkit-box-shadow:5px 5px 15px #AAA;-moz-box-shadow:5px 5px 15px #AAA;-khtml-box-shadow:5px 5px 15px #AAA;filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}#MathJax_ZoomOverlay{position:absolute;left:0;top:0;z-index:300;display:inline-block;width:100%;height:100%;border:0;padding:0;margin:0;background-color:#fff;opacity:0;filter:alpha(opacity=0)}#MathJax_ZoomFrame{position:relative;display:inline-block;height:0;width:0}#MathJax_ZoomEventTrap{position:absolute;left:0;top:0;z-index:302;display:inline-block;border:0;padding:0;margin:0;background-color:#fff;opacity:0;filter:alpha(opacity=0)}.MathJax_Preview{color:#888}#MathJax_Message{position:fixed;left:1px;bottom:2px;background-color:#E6E6E6;border:1px solid #959595;margin:0;padding:2px 8px;z-index:102;color:#000;font-size:80%;width:auto;white-space:nowrap}#MathJax_MSIE_Frame{position:absolute;top:0;left:0;width:0;z-index:101;border:0;margin:0;padding:0}.MathJax_Error{color:#C00;font-style:italic}footer{position:fixed;font-size:.8em;text-align:right;bottom:0;margin-left:-25px;height:20px;width:100%}</style>
+</head>
+<body class="markdown haroopad">
+<h1 id="目录"><a name="目录" href="#目录"></a>目录</h1><ul>
+<li><a href="#spring 核心">spring 核心</a></li><li><a href="#入门实例">入门实例</a></li><li><a href="#Bean">Bean</a></li><li><a href="#依赖注入">依赖注入</a></li><li><a href="#注解配置">注解配置</a></li><li><a href="#java配置">java配置</a></li><li><a href="#Spring事件">Spring事件</a></li><li><a href="#SpringAOP">SpringAOP</a><h4 id="spring-核心"><a name="spring-核心" href="#spring-核心"></a>spring 核心</h4>
+spring 框架提供了20多个模块，spring的架构图如下：<br><img src="file:///F:/%E7%AC%94%E8%AE%B0/spring/pics/arch.png" alt="spring 架构图"></li><li>核心容器<br>  核心容器由核心（core），Bean，上下文和表达式语言模块组成。<code>核心</code>模块提供了框架的基本组成部分，包括依赖注入。<code>Bean</code>模块提供BeanFactory，他是一个功能的复杂实现。<code>上下文模块</code>在由核心和Bean的基础上，访问定义和配置的任何对象的媒介，其中ApplicationContext是重点。<code>表达式语言</code>提供了查询和操作一个对象的强大的表达式语言。</li><li>数据访问/集成<br>  数据访问/集成层包括 JDBC，ORM，OXM，JMS 和事务处理模块，它们的细节如下：<br>  JDBC 模块提供了删除冗余的 JDBC 相关编码的 JDBC 抽象层。<br>  ORM 模块为流行的对象关系映射 API，包括 JPA，JDO，Hibernate 和 iBatis，提供了集成层。<br>  OXM 模块提供了抽象层，它支持对 JAXB，Castor，XMLBeans，JiBX 和 XStream 的对象/XML 映射实现。<br>  Java 消息服务 JMS 模块包含生产和消费的信息的功能。<br>  事务模块为实现特殊接口的类及所有的 POJO 支持编程式和声明式事务管理。</li><li>Web<br>  Web 层由 Web，Web-MVC，Web-Socket 和 Web-Portlet 组成，它们的细节如下：<br>  Web 模块提供了基本的面向 web 的集成功能，例如多个文件上传的功能和使用 servlet 监听器和面向 web 应用程序的上下文来初始化 IoC 容器。<br>  Web-MVC 模块包含 Spring 的模型-视图-控制器（MVC），实现了 web 应用程序。<br>  Web-Socket 模块为 WebSocket-based 提供了支持，而且在 web 应用程序中提供了客户端和服务器端之间通信的两种方式。<br>  Web-Portlet 模块提供了在 portlet 环境中实现 MVC，并且反映了 Web-Servlet 模块的功能。</li><li>其他还有其他一些重要的模块，像 AOP，Aspects，Instrumentation，Web 和测试模块，它们的细节如下：<br>  AOP 模块提供了面向方面的编程实现，允许你定义方法拦截器和切入点对代码进行干净地解耦，它实现了应该分离的功能。<br>  Aspects 模块提供了与 AspectJ 的集成，这是一个功能强大且成熟的面向切面编程（AOP）框架。<br>  Instrumentation 模块在一定的应用服务器中提供了类 instrumentation 的支持和类加载器的实现。<br>  Messaging 模块为 STOMP 提供了支持作为在应用程序中 WebSocket 子协议的使用。它也支持一个注解编程模型，它是为了选路和处理来自 WebSocket 客户端的 STOMP 信息。<br>  测试模块支持对具有 JUnit 或 TestNG 框架的 Spring 组件的测试。</li></ul><h4 id="入门实例"><a name="入门实例" href="#入门实例"></a>入门实例</h4><p>需要的核心jar包为：</p><ul>
+<li><p>commons-logging-1.1.1</p>
+</li><li><p>spring-aop-4.1.6.RELEASE</p>
+</li><li><p>spring-aspects-4.1.6.RELEASE</p>
+</li><li><p>spring-beans-4.1.6.RELEASE</p>
+</li><li><p>spring-context-4.1.6.RELEASE</p>
+</li><li><p>spring-context-support-4.1.6.RELEASE</p>
+</li><li><p>spring-core-4.1.6.RELEASE</p>
+</li><li><p>spring-expression-4.1.6.RELEASE</p>
+</li><li><p>spring-instrument-4.1.6.RELEASE</p>
+</li><li><p>spring-instrument-tomcat-4.1.6.RELEASE</p>
+</li><li><p>spring-jdbc-4.1.6.RELEASE</p>
+</li><li><p>spring-jms-4.1.6.RELEASE</p>
+</li><li><p>spring-messaging-4.1.6.RELEASE</p>
+</li><li><p>spring-orm-4.1.6.RELEASE</p>
+</li><li><p>spring-oxm-4.1.6.RELEASE</p>
+</li><li><p>spring-test-4.1.6.RELEASE</p>
+</li><li><p>spring-tx-4.1.6.RELEASE</p>
+</li><li><p>spring-web-4.1.6.RELEASE</p>
+</li><li><p>spring-webmvc-4.1.6.RELEASE</p>
+</li><li><p>spring-webmvc-portlet-4.1.6.RELEASE</p>
+</li><li><p>spring-websocket-4.1.6.RELEASE</p>
+</li></ul><p>创建实例bean</p><pre class="java hljs"><code class="java" data-origin="<pre><code class=&quot;java&quot;>public class HelloWorld {
+   private String message;
+   public void setMessage(String message){
+      this.message  = message;
+   }
+   public void getMessage(){
+      System.out.println(&quot;Your Message : &quot; + message);
+   }
+}
+</code></pre>"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloWorld</span> </span>{
+   <span class="hljs-keyword">private</span> String message;
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setMessage</span><span class="hljs-params">(String message)</span></span>{
+      <span class="hljs-keyword">this</span>.message  = message;
+   }
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">getMessage</span><span class="hljs-params">()</span></span>{
+      System.out.println(<span class="hljs-string">"Your Message : "</span> + message);
+   }
+}
+</code></pre><p>配置bean的xml文件</p><pre class="xml hljs"><code class="xml" data-origin="<pre><code class=&quot;xml&quot;>&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;
+
+&amp;lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd&quot;&amp;gt;
+
+   &amp;lt;bean id=&quot;helloWorld&quot; class=&quot;com.tutorialspoint.HelloWorld&quot;&amp;gt;
+       &amp;lt;property name=&quot;message&quot; value=&quot;Hello World!&quot;/&amp;gt;
+   &amp;lt;/bean&amp;gt;
+
+&amp;lt;/beans&amp;gt;
+</code></pre>"><span class="hljs-pi">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">beans</span> <span class="hljs-attribute">xmlns</span>=<span class="hljs-value">"http://www.springframework.org/schema/beans"</span>
+    <span class="hljs-attribute">xmlns:xsi</span>=<span class="hljs-value">"http://www.w3.org/2001/XMLSchema-instance"</span>
+    <span class="hljs-attribute">xsi:schemaLocation</span>=<span class="hljs-value">"http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"</span>&gt;</span>
+
+   <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"helloWorld"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"com.tutorialspoint.HelloWorld"</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-title">property</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"message"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Hello World!"</span>/&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-title">bean</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">beans</span>&gt;</span>
+</code></pre><p>然后在Main函数中得到bean</p><pre class="java hljs"><code class="java" data-origin="<pre><code class=&quot;java&quot;>import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+public class MainApp {
+   public static void main(String[] args) {
+      ApplicationContext context = 
+             new ClassPathXmlApplicationContext(&quot;Beans.xml&quot;);
+      HelloWorld obj = (HelloWorld) context.getBean(&quot;helloWorld&quot;);
+      obj.getMessage();
+   }
+}
+</code></pre>"><span class="hljs-keyword">import</span> org.springframework.context.ApplicationContext;
+<span class="hljs-keyword">import</span> org.springframework.context.support.ClassPathXmlApplicationContext;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainApp</span> </span>{
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+      ApplicationContext context = 
+             <span class="hljs-keyword">new</span> ClassPathXmlApplicationContext(<span class="hljs-string">"Beans.xml"</span>);
+      HelloWorld obj = (HelloWorld) context.getBean(<span class="hljs-string">"helloWorld"</span>);
+      obj.getMessage();
+   }
+}
+</code></pre><h4 id="bean"><a name="bean" href="#bean"></a>Bean</h4><ul>
+<li>bean的定义称为<code>配置元数据</code></li></ul><table>
+<thead>
+<tr>
+<th style="text-align:center">属性</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">class</td>
+<td style="text-align:center">这个属性是强制性的，并且指定用来创建 bean 的 bean 类。</td>
+</tr>
+<tr>
+<td style="text-align:center">name</td>
+<td style="text-align:center">这个属性指定唯一的 bean 标识符。在基于 XML 的配置元数据中，你可以使用 ID 和/或 name 属性来指定 bean 标识符。</td>
+</tr>
+<tr>
+<td style="text-align:center">scope</td>
+<td style="text-align:center">这个属性指定由特定的 bean 定义创建的对象的作用域，它将会在 bean 作用域的章节中进行讨论。</td>
+</tr>
+<tr>
+<td style="text-align:center">constructor-arg</td>
+<td style="text-align:center">它是用来注入依赖关系的，并会在接下来的章节中进行讨论。</td>
+</tr>
+<tr>
+<td style="text-align:center">properties</td>
+<td style="text-align:center">它是用来注入依赖关系的，并会在接下来的章节中进行讨论。</td>
+</tr>
+<tr>
+<td style="text-align:center">autowire</td>
+<td style="text-align:center">它是用来注入依赖关系的，并会在接下来的章节中进行讨论。</td>
+</tr>
+<tr>
+<td style="text-align:center">lazy-init</td>
+<td style="text-align:center">延迟初始化的 bean 告诉 IoC 容器在它第一次被请求时，而不是在启动时去创建一个 bean 实例。</td>
+</tr>
+<tr>
+<td style="text-align:center">init-method</td>
+<td style="text-align:center">在 bean 的所有必需的属性被容器设置之后，调用回调方法。它将会在 bean 的生命周期章节中进行讨论。</td>
+</tr>
+<tr>
+<td style="text-align:center">destroy-method</td>
+<td style="text-align:center">当包含该 bean 的容器被销毁时，使用回调方法。它将会在 bean 的生命周期章节中进行讨论。</td>
+</tr>
+</tbody>
+</table><p>配置元数据可以由xml文件定义，可以用注解进行定义同时还可以用java配置。</p><ul>
+<li>Bean scope<br>如果想是单例的话就用singleton，多例用prototype。</li></ul><table>
+<thead>
+<tr>
+<th>作用域</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>singleton</td>
+<td>该作用域将 bean 的定义的限制在每一个 Spring IoC 容器中的一个单一实例(默认)。</td>
+</tr>
+<tr>
+<td>prototype</td>
+<td>该作用域将单一 bean 的定义限制在任意数量的对象实例。</td>
+</tr>
+<tr>
+<td>request</td>
+<td>该作用域将 bean 的定义限制为 HTTP 请求。只在 web-aware Spring  ApplicationContext 的上下文中有效。</td>
+</tr>
+<tr>
+<td>session</td>
+<td>该作用域将 bean 的定义限制为 HTTP 会话。 只在web-aware Spring ApplicationContext的上下文中有效。</td>
+</tr>
+<tr>
+<td>global-session</td>
+<td>该作用域将 bean 的定义限制为全局 HTTP 会话。只在 web-aware Spring ApplicationContext 的上下文中有效。</td>
+</tr>
+</tbody>
+</table><ul>
+<li>Bean 生命周期<br>主要是init-method 和 destory-method </li></ul><p>使用init-method的方法</p><pre class="xml hljs"><code class="xml" data-origin="<pre><code class=&quot;xml&quot;>&amp;lt;bean id=&quot;exampleBean&quot;  class=&quot;examples.ExampleBean&quot; init-method=&quot;init&quot;/&amp;gt;
+&amp;lt;!-- init方法在ExampleBean中定义 --&amp;gt;
+</code></pre>"><span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"exampleBean"</span>  <span class="hljs-attribute">class</span>=<span class="hljs-value">"examples.ExampleBean"</span> <span class="hljs-attribute">init-method</span>=<span class="hljs-value">"init"</span>/&gt;</span>
+<span class="hljs-comment">&lt;!-- init方法在ExampleBean中定义 --&gt;</span>
+</code></pre><pre class="java hljs"><code class="java" data-origin="<pre><code class=&quot;java&quot;>public class ExampleBean {
+   public void init() {
+      // do some initialization work
+   }
+}
+</code></pre>"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ExampleBean</span> </span>{
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-comment">// do some initialization work</span>
+   }
+}
+</code></pre><p>同样的道理，如果要用destory-method，那么：</p><pre class="xml hljs"><code class="xml" data-origin="<pre><code class=&quot;xml&quot;>&amp;lt;bean id=&quot;exampleBean&quot;  class=&quot;examples.ExampleBean&quot; destory-method=&quot;destory&quot;/&amp;gt;
+&amp;lt;!-- init方法在ExampleBean中定义 --&amp;gt;
+</code></pre>"><span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"exampleBean"</span>  <span class="hljs-attribute">class</span>=<span class="hljs-value">"examples.ExampleBean"</span> <span class="hljs-attribute">destory-method</span>=<span class="hljs-value">"destory"</span>/&gt;</span>
+<span class="hljs-comment">&lt;!-- init方法在ExampleBean中定义 --&gt;</span>
+</code></pre><pre class="java hljs"><code class="java" data-origin="<pre><code class=&quot;java&quot;>public class ExampleBean {
+####    public void destory() {
+      // do some initialization work
+   }
+}
+</code></pre>"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ExampleBean</span> </span>{
+####    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">destory</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-comment">// do some initialization work</span>
+   }
+}
+</code></pre><ul>
+<li>Bean的后置处理</li></ul><p><code>BeanPostProcessor</code>接口作用是：<strong>如果我们需要在Spring容器完成Bean的实例化、配置和其他的初始化前后添加一些自己的逻辑处理，我们就可以定义一个或者多个BeanPostProcessor接口的实现，然后注册到容器中。</strong><br>spring中bean的实例化过程如图：<br><img src="file:///F:/%E7%AC%94%E8%AE%B0/spring/pics/bean_process.jpg" alt="bean的实例化过程"></p><p>这个接口有两个需要实现的方法。postProcessBeforeInitialization和postProcessAfterInitialization</p><ul>
+<li>Bean定义继承</li></ul><p>在xml中，使用parent属性，例如</p><pre class="xml hljs"><code class="xml" data-origin="<pre><code class=&quot;xml&quot;>   &amp;lt;bean id=&quot;helloIndia&quot; class=&quot;com.tutorialspoint.HelloIndia&quot; parent=&quot;helloWorld&quot;&amp;gt;
+      &amp;lt;property name=&quot;message1&quot; value=&quot;Hello India!&quot;/&amp;gt;
+      &amp;lt;property name=&quot;message3&quot; value=&quot;Namaste India!&quot;/&amp;gt;
+   &amp;lt;/bean&amp;gt;
+</code></pre>">   <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"helloIndia"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"com.tutorialspoint.HelloIndia"</span> <span class="hljs-attribute">parent</span>=<span class="hljs-value">"helloWorld"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">property</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"message1"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Hello India!"</span>/&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">property</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"message3"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Namaste India!"</span>/&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-title">bean</span>&gt;</span>
+</code></pre><p>还可以在xml中定义模板</p><pre class="xml hljs"><code class="xml" data-origin="<pre><code class=&quot;xml&quot;>   &amp;lt;bean id=&quot;templateBean&quot; abstract=&quot;true&quot; &amp;gt;
+       &amp;lt;property name=&quot;name&quot; value=&quot;zhongguo&quot;&amp;gt;&amp;lt;/property&amp;gt;
+   &amp;lt;/bean&amp;gt;
+   &amp;lt;bean id=&quot;helloJS&quot; class=&quot;com.xixi.bean.HelloJS&quot; parent=&quot;templateBean&quot;/&amp;gt;
+</code></pre>">   <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"templateBean"</span> <span class="hljs-attribute">abstract</span>=<span class="hljs-value">"true"</span> &gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-title">property</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"name"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"zhongguo"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">property</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-title">bean</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"helloJS"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"com.xixi.bean.HelloJS"</span> <span class="hljs-attribute">parent</span>=<span class="hljs-value">"templateBean"</span>/&gt;</span>
+</code></pre><p>但是模板bean中的所有属性，继承的bean必须全部要有，否则报错。</p><h4 id="依赖注入"><a name="依赖注入" href="#依赖注入"></a>依赖注入</h4><p>依赖注入有两种方式，<code>构造函数注入</code>和<code>set方法注入</code></p><ul>
+<li>构造函数注入</li></ul><p>可以使用如下三种方式：</p><pre class="xml hljs"><code class="xml" data-origin="<pre><code class=&quot;xml&quot;> &amp;lt;!-- 构造函数注入 --&amp;gt;
+  &amp;lt;bean id=&quot;car&quot; class=&quot;com.xixi.bean.Car&quot;&amp;gt;
+           &amp;lt;constructor-arg ref=&quot;door&quot;/&amp;gt;
+           &amp;lt;constructor-arg ref=&quot;wheel&quot;/&amp;gt;
+   &amp;lt;/bean&amp;gt;
+   &amp;lt;bean id=&quot;car&quot; class=&quot;com.xixi.bean.Car&quot;&amp;gt;
+           &amp;lt;constructor-arg type=&quot;java.lang.String&quot; value=&quot;bmw&quot;/&amp;gt;
+           &amp;lt;constructor-arg type=&quot;java.lang.String&quot; value=&quot;007&quot;&amp;gt;&amp;lt;/constructor-arg&amp;gt;
+   &amp;lt;/bean&amp;gt;
+   &amp;lt;bean id=&quot;car&quot; class=&quot;com.xixi.bean.Car&quot;&amp;gt;
+           &amp;lt;constructor-arg index=&quot;0&quot; value=&quot;bmw&quot;/&amp;gt;
+           &amp;lt;constructor-arg index=&quot;1&quot; value=&quot;007&quot;/&amp;gt;
+   &amp;lt;/bean&amp;gt;
+   &amp;lt;bean id=&quot;door&quot; class=&quot;com.xixi.bean.Door&quot;/&amp;gt;
+   &amp;lt;bean id=&quot;wheel&quot; class=&quot;com.xixi.bean.Wheel&quot;/&amp;gt;
+</code></pre>"> <span class="hljs-comment">&lt;!-- 构造函数注入 --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"car"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"com.xixi.bean.Car"</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-title">constructor-arg</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">"door"</span>/&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-title">constructor-arg</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">"wheel"</span>/&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-title">bean</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"car"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"com.xixi.bean.Car"</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-title">constructor-arg</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"java.lang.String"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"bmw"</span>/&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-title">constructor-arg</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"java.lang.String"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"007"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">constructor-arg</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-title">bean</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"car"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"com.xixi.bean.Car"</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-title">constructor-arg</span> <span class="hljs-attribute">index</span>=<span class="hljs-value">"0"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"bmw"</span>/&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-title">constructor-arg</span> <span class="hljs-attribute">index</span>=<span class="hljs-value">"1"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"007"</span>/&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-title">bean</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"door"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"com.xixi.bean.Door"</span>/&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"wheel"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"com.xixi.bean.Wheel"</span>/&gt;</span>
+</code></pre><ul>
+<li>set方法注入<br>在xml中使用的是property元素或者使用p-namespace </li></ul><pre class="xml hljs"><code class="xml" data-origin="<pre><code class=&quot;xml&quot;>    &amp;lt;!-- set方法注入 --&amp;gt;
+    &amp;lt;bean id=&quot;car&quot; class=&quot;com.xixi.bean.Car&quot;&amp;gt;
+        &amp;lt;property name=&quot;carName&quot; value=&quot;bmw&quot;&amp;gt;&amp;lt;/property&amp;gt;
+    &amp;lt;/bean&amp;gt;
+    &amp;lt;bean id=&quot;car&quot; class=&quot;com.xixi.bean.Car&quot; p:carName=&quot;bmw&quot;/&amp;gt;
+    &amp;lt;!-- 使用p的时候要在开头加上校验
+      xmlns:p=&quot;http://www.springframework.org/schema/p&quot;
+      --&amp;gt;
+</code></pre>">    <span class="hljs-comment">&lt;!-- set方法注入 --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"car"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"com.xixi.bean.Car"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">property</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"carName"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"bmw"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">property</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">bean</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"car"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"com.xixi.bean.Car"</span> <span class="hljs-attribute">p:carName</span>=<span class="hljs-value">"bmw"</span>/&gt;</span>
+    <span class="hljs-comment">&lt;!-- 使用p的时候要在开头加上校验
+      xmlns:p="http://www.springframework.org/schema/p"
+      --&gt;</span>
+</code></pre><ul>
+<li>在bean中注入集合</li></ul><pre class="xml hljs"><code class="xml" data-origin="<pre><code class=&quot;xml&quot;>   &amp;lt;bean id=&quot;collectionMapBean&quot; class=&quot;com.xixi.bean.CollectionMapBean&quot;&amp;gt;
+        &amp;lt;property name=&quot;addressList&quot;&amp;gt;
+            &amp;lt;list&amp;gt;
+                &amp;lt;value&amp;gt;china&amp;lt;/value&amp;gt;
+                &amp;lt;value&amp;gt;uk&amp;lt;/value&amp;gt;
+            &amp;lt;/list&amp;gt;
+        &amp;lt;/property&amp;gt;
+        &amp;lt;property name=&quot;addressSet&quot;&amp;gt;
+            &amp;lt;set&amp;gt;
+                &amp;lt;value&amp;gt;india&amp;lt;/value&amp;gt;
+                &amp;lt;value&amp;gt;budan&amp;lt;/value&amp;gt;
+            &amp;lt;/set&amp;gt;
+        &amp;lt;/property&amp;gt;
+        &amp;lt;property name=&quot;addressMap&quot;&amp;gt;
+            &amp;lt;map&amp;gt;
+                &amp;lt;entry key=&quot;1&quot; value=&quot;INDIA&quot; /&amp;gt;
+                &amp;lt;entry key=&quot;2&quot; value=&quot;Pakistan&quot; /&amp;gt;
+                &amp;lt;entry key=&quot;3&quot; value=&quot;USA&quot; /&amp;gt;
+                &amp;lt;entry key=&quot;4&quot; value=&quot;USA&quot; /&amp;gt;
+            &amp;lt;/map&amp;gt;
+        &amp;lt;/property&amp;gt;
+        &amp;lt;property name=&quot;addressProperties&quot;&amp;gt;
+            &amp;lt;props&amp;gt;
+                &amp;lt;prop key=&quot;one&quot;&amp;gt;INDIA&amp;lt;/prop&amp;gt;
+                &amp;lt;prop key=&quot;two&quot;&amp;gt;Pakistan&amp;lt;/prop&amp;gt;
+                &amp;lt;prop key=&quot;three&quot;&amp;gt;USA&amp;lt;/prop&amp;gt;
+                &amp;lt;prop key=&quot;four&quot;&amp;gt;USA&amp;lt;/prop&amp;gt;
+            &amp;lt;/props&amp;gt;
+        &amp;lt;/property&amp;gt;
+    &amp;lt;/bean&amp;gt;
+</code></pre>">   <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"collectionMapBean"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"com.xixi.bean.CollectionMapBean"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">property</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"addressList"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">list</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">value</span>&gt;</span>china<span class="hljs-tag">&lt;/<span class="hljs-title">value</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">value</span>&gt;</span>uk<span class="hljs-tag">&lt;/<span class="hljs-title">value</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">list</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">property</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">property</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"addressSet"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">set</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">value</span>&gt;</span>india<span class="hljs-tag">&lt;/<span class="hljs-title">value</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">value</span>&gt;</span>budan<span class="hljs-tag">&lt;/<span class="hljs-title">value</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">set</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">property</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">property</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"addressMap"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">map</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">entry</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"INDIA"</span> /&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">entry</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Pakistan"</span> /&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">entry</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"3"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"USA"</span> /&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">entry</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"4"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"USA"</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">map</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">property</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">property</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"addressProperties"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">props</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">prop</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"one"</span>&gt;</span>INDIA<span class="hljs-tag">&lt;/<span class="hljs-title">prop</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">prop</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"two"</span>&gt;</span>Pakistan<span class="hljs-tag">&lt;/<span class="hljs-title">prop</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">prop</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"three"</span>&gt;</span>USA<span class="hljs-tag">&lt;/<span class="hljs-title">prop</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">prop</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"four"</span>&gt;</span>USA<span class="hljs-tag">&lt;/<span class="hljs-title">prop</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">props</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">property</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">bean</span>&gt;</span>
+</code></pre><ul>
+<li>自动注入Bean</li></ul><p>前面讲的都是手动注入Bean，Spring还可以通过以下几种方式自动注入Bean。第一种方式是byName，第二种byType，第三种constructor，第四种autodetect（先尝试constructor，再用byType）</p><ul>
+<li>byName<pre class="xml hljs"><code class="xml" data-origin="<pre><code class=&quot;xml&quot;>&amp;lt;!-- 自动注入door和wheel --&amp;gt;
+ &amp;lt;bean id=&quot;car&quot; class=&quot;com.xixi.bean.Car&quot; autowire=&quot;byName&quot;/&amp;gt;
+ &amp;lt;bean id=&quot;door&quot; class=&quot;com.xixi.bean.Door&quot; /&amp;gt;
+ &amp;lt;bean id=&quot;wheel&quot; class=&quot;com.xixi.bean.Wheel&quot;/&amp;gt;
+</code></pre>"><span class="hljs-comment">&lt;!-- 自动注入door和wheel --&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"car"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"com.xixi.bean.Car"</span> <span class="hljs-attribute">autowire</span>=<span class="hljs-value">"byName"</span>/&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"door"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"com.xixi.bean.Door"</span> /&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"wheel"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"com.xixi.bean.Wheel"</span>/&gt;</span>
+</code></pre>
+</li><li>byType<br>同理是一样的，只不过是找相同的类去注入。</li><li>byConstructor<br>同理按照构造器自动注入。</li></ul><pre class="xml hljs"><code class="xml" data-origin="<pre><code class=&quot;xml&quot;>   &amp;lt;bean id=&quot;textEditor&quot; class=&quot;com.tutorialspoint.TextEditor&quot; 
+      autowire=&quot;constructor&quot;&amp;gt;
+      &amp;lt;constructor-arg value=&quot;Generic Text Editor&quot;/&amp;gt;
+   &amp;lt;/bean&amp;gt;
+</code></pre>">   <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"textEditor"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"com.tutorialspoint.TextEditor"</span> 
+      <span class="hljs-attribute">autowire</span>=<span class="hljs-value">"constructor"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">constructor-arg</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Generic Text Editor"</span>/&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-title">bean</span>&gt;</span>
+</code></pre><h4 id="注解配置"><a name="注解配置" href="#注解配置"></a>注解配置</h4><p> 启用注解配置的话需要在xml中添加</p><pre class="xml hljs"><code class="xml" data-origin="<pre><code class=&quot;xml&quot;> &amp;lt;context:annotation-config/&amp;gt;
+ &amp;lt;!--
+    需要增加校验
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.3.xsd
+    --&amp;gt;
+</code></pre>"> <span class="hljs-tag">&lt;<span class="hljs-title">context:annotation-config</span>/&gt;</span>
+ <span class="hljs-comment">&lt;!--
+    需要增加校验
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.3.xsd
+    --&gt;</span>
+</code></pre><p>注意：使用注解的方式并不能完全脱离xml文件。只能减少xml的配置项。<br>声明Bean的注解有<code>@Component</code>,<code>@Service</code>,<code>@Repository</code>,<code>@Controller</code>。<br>注入Bean的注解有<code>@AuAutowired</code>,<code>@Inject</code>,<code>@Resource</code>。</p><p>声明Bean的组件必须在xml文件中加入下面这句话让spring自动寻找这些bean：</p><pre class="xml hljs"><code class="xml" data-origin="<pre><code class=&quot;xml&quot;>&amp;lt;context:component-scan base-package=&quot;com.xixi.bean&quot;/&amp;gt;
+</code></pre>"><span class="hljs-tag">&lt;<span class="hljs-title">context:component-scan</span> <span class="hljs-attribute">base-package</span>=<span class="hljs-value">"com.xixi.bean"</span>/&gt;</span>
+</code></pre><p>声明Bean的注解后面可以加上scope</p><pre class="java hljs"><code class="java" data-origin="<pre><code class=&quot;java&quot;>@Component
+@Scope(&quot;singleton&quot;)
+public class Car {
+}
+</code></pre>"><span class="hljs-annotation">@Component</span>
+<span class="hljs-annotation">@Scope</span>(<span class="hljs-string">"singleton"</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span> </span>{
+}
+</code></pre><p>Autowired注入bean可以写在类成员，构造函数，set方法上</p><h4 id="java配置"><a name="java配置" href="#java配置"></a>java配置</h4><p>和xml配置bean功能相同，表现形式不同而已。用java配置的bean的方法如下：</p><pre class="java hljs"><code class="java" data-origin="<pre><code class=&quot;java&quot;>@Configuration //声明是个java配置bean 也可以引入另一个Config ，@Import(Config2.class)
+public class MyConfig{
+    @Bean //声明一个bean  @Bean(initMethod=&quot;方法名&quot;,destoryMethod=&quot;&quot;) @Scope(&quot;&quot;);
+    public Car  car(){
+        return new Car();
+    }
+}
+</code></pre>"><span class="hljs-annotation">@Configuration</span> <span class="hljs-comment">//声明是个java配置bean 也可以引入另一个Config ，@Import(Config2.class)</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyConfig</span></span>{
+    <span class="hljs-annotation">@Bean</span> <span class="hljs-comment">//声明一个bean  @Bean(initMethod="方法名",destoryMethod="") @Scope("");</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Car  <span class="hljs-title">car</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Car();
+    }
+}
+</code></pre><p>然后可以利用AnnotationConfigApplicationContext得到Bean</p><pre class="java hljs"><code class="java" data-origin="<pre><code class=&quot;java&quot;>public static void main(String[] args) {
+   ApplicationContext ctx = 
+   new AnnotationConfigApplicationContext(MyConfig.class);
+   Car car=ctx.getBean(Car.class);
+}
+</code></pre>"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+   ApplicationContext ctx = 
+   <span class="hljs-keyword">new</span> AnnotationConfigApplicationContext(MyConfig.class);
+   Car car=ctx.getBean(Car.class);
+}
+</code></pre><h4 id="spring事件"><a name="spring事件" href="#spring事件"></a>Spring事件</h4><p>spring中有四种事件，分别是<code>ContextRefreshedEvent</code>，<code>ContextStartedEvent</code>，<code>ContextStoppedEvent</code>，<code>RequestHandledEvent</code><br>如何监听这些事件？实现ApplicationListener<contextstartedevent>接口</contextstartedevent></p><pre class="java hljs"><code class="java" data-origin="<pre><code class=&quot;java&quot;>
+import org.springframework.context.ApplicationListener;
+import org.springframework.context.event.ContextStartedEvent;
+import org.springframework.stereotype.Component;
+
+@Component
+public class MyStartEventListener implements ApplicationListener&amp;lt;ContextStartedEvent&amp;gt; {
+
+    public void onApplicationEvent(ContextStartedEvent arg0) {
+        System.out.println(&quot;start context!!&quot;+arg0.getTimestamp());
+    }
+
+}
+</code></pre>">
+<span class="hljs-keyword">import</span> org.springframework.context.ApplicationListener;
+<span class="hljs-keyword">import</span> org.springframework.context.event.ContextStartedEvent;
+<span class="hljs-keyword">import</span> org.springframework.stereotype.Component;
+
+<span class="hljs-annotation">@Component</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyStartEventListener</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">ApplicationListener</span>&lt;<span class="hljs-title">ContextStartedEvent</span>&gt; </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onApplicationEvent</span><span class="hljs-params">(ContextStartedEvent arg0)</span> </span>{
+        System.out.println(<span class="hljs-string">"start context!!"</span>+arg0.getTimestamp());
+    }
+
+}
+</code></pre><h4 id="springaop"><a name="springaop" href="#springaop"></a>SpringAOP</h4><p>第一种方式，纯xml配置。<br>首先在xml文件中加入aop的校验</p><pre class="xml hljs"><code class="xml" data-origin="<pre><code class=&quot;xml&quot;>&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;
+&amp;lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; 
+    xmlns:aop=&quot;http://www.springframework.org/schema/aop&quot; 
+    xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+    http://www.springframework.org/schema/aop 
+    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd &quot;&amp;gt;
+
+   &amp;lt;!-- bean definition &amp;amp; AOP specific configuration --&amp;gt;
+
+&amp;lt;/beans&amp;gt;
+</code></pre>"><span class="hljs-pi">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">beans</span> <span class="hljs-attribute">xmlns</span>=<span class="hljs-value">"http://www.springframework.org/schema/beans"</span>
+    <span class="hljs-attribute">xmlns:xsi</span>=<span class="hljs-value">"http://www.w3.org/2001/XMLSchema-instance"</span> 
+    <span class="hljs-attribute">xmlns:aop</span>=<span class="hljs-value">"http://www.springframework.org/schema/aop"</span> 
+    <span class="hljs-attribute">xsi:schemaLocation</span>=<span class="hljs-value">"http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+    http://www.springframework.org/schema/aop 
+    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd "</span>&gt;</span>
+
+   <span class="hljs-comment">&lt;!-- bean definition &amp; AOP specific configuration --&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">beans</span>&gt;</span>
+</code></pre><p>其次需要加载aspect的jar包</p><pre class="xml hljs"><code class="xml" data-origin="<pre><code class=&quot;xml&quot;>&amp;lt;!-- aop支持 --&amp;gt;
+        &amp;lt;dependency&amp;gt;
+            &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;
+            &amp;lt;artifactId&amp;gt;spring-aop&amp;lt;/artifactId&amp;gt;
+            &amp;lt;version&amp;gt;${org.springframework-version}&amp;lt;/version&amp;gt;
+        &amp;lt;/dependency&amp;gt;
+        &amp;lt;!-- aspectj支持 --&amp;gt;
+        &amp;lt;dependency&amp;gt;
+            &amp;lt;groupId&amp;gt;org.aspectj&amp;lt;/groupId&amp;gt;
+            &amp;lt;artifactId&amp;gt;aspectjrt&amp;lt;/artifactId&amp;gt;
+            &amp;lt;version&amp;gt;${org.aspectj-version}&amp;lt;/version&amp;gt;
+        &amp;lt;/dependency&amp;gt;
+        &amp;lt;dependency&amp;gt;
+            &amp;lt;groupId&amp;gt;org.aspectj&amp;lt;/groupId&amp;gt;
+            &amp;lt;artifactId&amp;gt;aspectjweaver&amp;lt;/artifactId&amp;gt;
+            &amp;lt;version&amp;gt;${org.aspectj-version}&amp;lt;/version&amp;gt;
+        &amp;lt;/dependency&amp;gt;
+
+        &amp;lt;!-- https://mvnrepository.com/artifact/aopalliance/aopalliance --&amp;gt;
+        &amp;lt;dependency&amp;gt;
+            &amp;lt;groupId&amp;gt;aopalliance&amp;lt;/groupId&amp;gt;
+            &amp;lt;artifactId&amp;gt;aopalliance&amp;lt;/artifactId&amp;gt;
+            &amp;lt;version&amp;gt;1.0&amp;lt;/version&amp;gt;
+        &amp;lt;/dependency&amp;gt;
+</code></pre>"><span class="hljs-comment">&lt;!-- aop支持 --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">dependency</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>org.springframework<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>spring-aop<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">version</span>&gt;</span>${org.springframework-version}<span class="hljs-tag">&lt;/<span class="hljs-title">version</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">dependency</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- aspectj支持 --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">dependency</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>org.aspectj<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>aspectjrt<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">version</span>&gt;</span>${org.aspectj-version}<span class="hljs-tag">&lt;/<span class="hljs-title">version</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">dependency</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">dependency</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>org.aspectj<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>aspectjweaver<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">version</span>&gt;</span>${org.aspectj-version}<span class="hljs-tag">&lt;/<span class="hljs-title">version</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">dependency</span>&gt;</span>
+
+        <span class="hljs-comment">&lt;!-- https://mvnrepository.com/artifact/aopalliance/aopalliance --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">dependency</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>aopalliance<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>aopalliance<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">version</span>&gt;</span>1.0<span class="hljs-tag">&lt;/<span class="hljs-title">version</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">dependency</span>&gt;</span>
+</code></pre><p>最后是声明一个aspect。在xml中的配置如下</p><pre class="xml hljs"><code class="xml" data-origin="<pre><code class=&quot;xml&quot;>&amp;lt;aop:config&amp;gt;
+   &amp;lt;aop:aspect id=&quot;myAspect&quot; ref=&quot;aBean&quot;&amp;gt;
+   &amp;lt;aop:pointcut id=&quot;businessService&quot;
+      expression=&quot;execution(* com.xyz.myapp.service.*.*(..))&quot;/&amp;gt;
+       &amp;lt;aop:before pointcut-ref=&quot;businessService&quot; 
+         method=&quot;doRequiredTask&quot;/&amp;gt;
+      &amp;lt;!-- an after advice definition --&amp;gt;
+      &amp;lt;aop:after pointcut-ref=&quot;businessService&quot; 
+         method=&quot;doRequiredTask&quot;/&amp;gt;
+      &amp;lt;!-- an after-returning advice definition --&amp;gt;
+      &amp;lt;!--The doRequiredTask method must have parameter named retVal --&amp;gt;
+      &amp;lt;aop:after-returning pointcut-ref=&quot;businessService&quot;
+         returning=&quot;retVal&quot;
+         method=&quot;doRequiredTask&quot;/&amp;gt;
+      &amp;lt;!-- an after-throwing advice definition --&amp;gt;
+      &amp;lt;!--The doRequiredTask method must have parameter named ex --&amp;gt;
+      &amp;lt;aop:after-throwing pointcut-ref=&quot;businessService&quot;
+         throwing=&quot;ex&quot;
+         method=&quot;doRequiredTask&quot;/&amp;gt;
+      &amp;lt;!-- an around advice definition --&amp;gt;
+      &amp;lt;aop:around pointcut-ref=&quot;businessService&quot; 
+         method=&quot;doRequiredTask&quot;/&amp;gt;
+   &amp;lt;/aop:aspect&amp;gt;
+&amp;lt;/aop:config&amp;gt;
+&amp;lt;bean id=&quot;aBean&quot; class=&quot;...&quot;&amp;gt;
+...
+&amp;lt;/bean&amp;gt;
+</code></pre>"><span class="hljs-tag">&lt;<span class="hljs-title">aop:config</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">aop:aspect</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"myAspect"</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">"aBean"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">aop:pointcut</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"businessService"</span>
+      <span class="hljs-attribute">expression</span>=<span class="hljs-value">"execution(* com.xyz.myapp.service.*.*(..))"</span>/&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-title">aop:before</span> <span class="hljs-attribute">pointcut-ref</span>=<span class="hljs-value">"businessService"</span> 
+         <span class="hljs-attribute">method</span>=<span class="hljs-value">"doRequiredTask"</span>/&gt;</span>
+      <span class="hljs-comment">&lt;!-- an after advice definition --&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">aop:after</span> <span class="hljs-attribute">pointcut-ref</span>=<span class="hljs-value">"businessService"</span> 
+         <span class="hljs-attribute">method</span>=<span class="hljs-value">"doRequiredTask"</span>/&gt;</span>
+      <span class="hljs-comment">&lt;!-- an after-returning advice definition --&gt;</span>
+      <span class="hljs-comment">&lt;!--The doRequiredTask method must have parameter named retVal --&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">aop:after-returning</span> <span class="hljs-attribute">pointcut-ref</span>=<span class="hljs-value">"businessService"</span>
+         <span class="hljs-attribute">returning</span>=<span class="hljs-value">"retVal"</span>
+         <span class="hljs-attribute">method</span>=<span class="hljs-value">"doRequiredTask"</span>/&gt;</span>
+      <span class="hljs-comment">&lt;!-- an after-throwing advice definition --&gt;</span>
+      <span class="hljs-comment">&lt;!--The doRequiredTask method must have parameter named ex --&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">aop:after-throwing</span> <span class="hljs-attribute">pointcut-ref</span>=<span class="hljs-value">"businessService"</span>
+         <span class="hljs-attribute">throwing</span>=<span class="hljs-value">"ex"</span>
+         <span class="hljs-attribute">method</span>=<span class="hljs-value">"doRequiredTask"</span>/&gt;</span>
+      <span class="hljs-comment">&lt;!-- an around advice definition --&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">aop:around</span> <span class="hljs-attribute">pointcut-ref</span>=<span class="hljs-value">"businessService"</span> 
+         <span class="hljs-attribute">method</span>=<span class="hljs-value">"doRequiredTask"</span>/&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-title">aop:aspect</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">aop:config</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"aBean"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"..."</span>&gt;</span>
+...
+<span class="hljs-tag">&lt;/<span class="hljs-title">bean</span>&gt;</span>
+</code></pre><p>第二种方式，xml+aspect注解<br>首先通过Aspect声明他是一个切面</p><pre class="java hljs"><code class="java" data-origin="<pre><code class=&quot;java&quot;>@Aspect
+public class Logging {
+   /** Following is the definition for a pointcut to select
+    *  all the methods available. So advice will be called
+    *  for all the methods.
+    */
+   @Pointcut(&quot;execution(* com.tutorialspoint.*.*(..))&quot;)
+   private void selectAll(){}
+   /** 
+    * This is the method which I would like to execute
+    * before a selected method execution.
+    */
+   @Before(&quot;selectAll()&quot;)
+   public void beforeAdvice(){
+      System.out.println(&quot;Going to setup student profile.&quot;);
+   }
+   /** 
+    * This is the method which I would like to execute
+    * after a selected method execution.
+    */
+   @After(&quot;selectAll()&quot;)
+   public void afterAdvice(){
+      System.out.println(&quot;Student profile has been setup.&quot;);
+   }
+   /** 
+    * This is the method which I would like to execute
+    * when any method returns.
+    */
+   @AfterReturning(pointcut = &quot;selectAll()&quot;, returning=&quot;retVal&quot;)
+   public void afterReturningAdvice(Object retVal){
+      System.out.println(&quot;Returning:&quot; + retVal.toString() );
+   }
+   /**
+    * This is the method which I would like to execute
+    * if there is an exception raised by any method.
+    */
+   @AfterThrowing(pointcut = &quot;selectAll()&quot;, throwing = &quot;ex&quot;)
+   public void AfterThrowingAdvice(IllegalArgumentException ex){
+      System.out.println(&quot;There has been an exception: &quot; + ex.toString());   
+   }  
+}
+</code></pre>"><span class="hljs-annotation">@Aspect</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Logging</span> </span>{
+   <span class="hljs-javadoc">/** Following is the definition for a pointcut to select
+    *  all the methods available. So advice will be called
+    *  for all the methods.
+    */</span>
+   <span class="hljs-annotation">@Pointcut</span>(<span class="hljs-string">"execution(* com.tutorialspoint.*.*(..))"</span>)
+   <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">selectAll</span><span class="hljs-params">()</span></span>{}
+   <span class="hljs-javadoc">/** 
+    * This is the method which I would like to execute
+    * before a selected method execution.
+    */</span>
+   <span class="hljs-annotation">@Before</span>(<span class="hljs-string">"selectAll()"</span>)
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">beforeAdvice</span><span class="hljs-params">()</span></span>{
+      System.out.println(<span class="hljs-string">"Going to setup student profile."</span>);
+   }
+   <span class="hljs-javadoc">/** 
+    * This is the method which I would like to execute
+    * after a selected method execution.
+    */</span>
+   <span class="hljs-annotation">@After</span>(<span class="hljs-string">"selectAll()"</span>)
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">afterAdvice</span><span class="hljs-params">()</span></span>{
+      System.out.println(<span class="hljs-string">"Student profile has been setup."</span>);
+   }
+   <span class="hljs-javadoc">/** 
+    * This is the method which I would like to execute
+    * when any method returns.
+    */</span>
+   <span class="hljs-annotation">@AfterReturning</span>(pointcut = <span class="hljs-string">"selectAll()"</span>, returning=<span class="hljs-string">"retVal"</span>)
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">afterReturningAdvice</span><span class="hljs-params">(Object retVal)</span></span>{
+      System.out.println(<span class="hljs-string">"Returning:"</span> + retVal.toString() );
+   }
+   <span class="hljs-javadoc">/**
+    * This is the method which I would like to execute
+    * if there is an exception raised by any method.
+    */</span>
+   <span class="hljs-annotation">@AfterThrowing</span>(pointcut = <span class="hljs-string">"selectAll()"</span>, throwing = <span class="hljs-string">"ex"</span>)
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">AfterThrowingAdvice</span><span class="hljs-params">(IllegalArgumentException ex)</span></span>{
+      System.out.println(<span class="hljs-string">"There has been an exception: "</span> + ex.toString());   
+   }  
+}
+</code></pre><p>其次，配置xml文件</p><pre class="xml hljs"><code class="xml" data-origin="<pre><code class=&quot;xml&quot;>&amp;lt;aop:aspectj-autoproxy/&amp;gt;  &amp;lt;!-- 开始spring对aspect的支持  --&amp;gt;
+&amp;lt;bean id=&quot;logging&quot; class=&quot;com.tutorialspoint.Logging&quot;/&amp;gt; &amp;lt;!-- 定义aspectj 的Bean  --&amp;gt;
+</code></pre>"><span class="hljs-tag">&lt;<span class="hljs-title">aop:aspectj-autoproxy</span>/&gt;</span>  <span class="hljs-comment">&lt;!-- 开始spring对aspect的支持  --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"logging"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"com.tutorialspoint.Logging"</span>/&gt;</span> <span class="hljs-comment">&lt;!-- 定义aspectj 的Bean  --&gt;</span>
+</code></pre><p>第三种方式。纯代码配置（其实和上面一样，只不过多了基于java的配置而已）<br>首先声明aspect，并且注册为bean</p><pre class="java hljs"><code class="java" data-origin="<pre><code class=&quot;java&quot;>@Aspect
+@Component
+public class AnnotationLogAspect {
+    @Pointcut(&quot;@annotation(com.xixi.bean.Student)&quot;)
+    public void annotationPointCut(){}
+
+    @Before(&quot;execution(* com.xixi.bean.*.*(..))&quot;)
+    public void before(JoinPoint joinpoint){
+        System.out.println(&quot;注解式aop&quot;+joinpoint.getKind());
+    }
+    //pointcut-ref=&quot;selectAll&quot; returning=&quot;retVal&quot; method=&quot;afterReturningAdvice&quot; 
+    @AfterReturning(pointcut=&quot;annotationPointCut&quot;,returning=&quot;retVal&quot;)
+    public void afterreturn(){
+
+    }
+}
+</code></pre>"><span class="hljs-annotation">@Aspect</span>
+<span class="hljs-annotation">@Component</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AnnotationLogAspect</span> </span>{
+    <span class="hljs-annotation">@Pointcut</span>(<span class="hljs-string">"@annotation(com.xixi.bean.Student)"</span>)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">annotationPointCut</span><span class="hljs-params">()</span></span>{}
+
+    <span class="hljs-annotation">@Before</span>(<span class="hljs-string">"execution(* com.xixi.bean.*.*(..))"</span>)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">before</span><span class="hljs-params">(JoinPoint joinpoint)</span></span>{
+        System.out.println(<span class="hljs-string">"注解式aop"</span>+joinpoint.getKind());
+    }
+    <span class="hljs-comment">//pointcut-ref="selectAll" returning="retVal" method="afterReturningAdvice" </span>
+    <span class="hljs-annotation">@AfterReturning</span>(pointcut=<span class="hljs-string">"annotationPointCut"</span>,returning=<span class="hljs-string">"retVal"</span>)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">afterreturn</span><span class="hljs-params">()</span></span>{
+
+    }
+}
+</code></pre><p>其次定义java配置</p><pre class="java hljs"><code class="java" data-origin="<pre><code class=&quot;java&quot;>
+@Configuration
+@ComponentScan(&quot;com.xixi.bean,com.xixi.aspect&quot;)
+@EnableAspectJAutoProxy // 对AspectJ支持//如果是在xml中，则xml配置为 &amp;lt;aop:aspectj-autoproxy/&amp;gt;
+public class MyConfig {
+
+}
+</code></pre>">
+<span class="hljs-annotation">@Configuration</span>
+<span class="hljs-annotation">@ComponentScan</span>(<span class="hljs-string">"com.xixi.bean,com.xixi.aspect"</span>)
+<span class="hljs-annotation">@EnableAspectJAutoProxy</span> <span class="hljs-comment">// 对AspectJ支持//如果是在xml中，则xml配置为 &lt;aop:aspectj-autoproxy/&gt;</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyConfig</span> </span>{
+
+}
+</code></pre>
+
+<footer style="position:fixed; font-size:.8em; text-align:right; bottom:0px; margin-left:-25px; height:20px; width:100%;">generated by <a href="http://pad.haroopress.com" target="_blank">haroopad</a></footer>
+</body>
+</html>
