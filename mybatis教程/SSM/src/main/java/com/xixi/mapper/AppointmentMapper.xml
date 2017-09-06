@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xixi.dao.AppointmentMapper" >
+  <resultMap id="BaseResultMap" type="com.xixi.bean.Appointment" >
+    <id column="book_id" property="bookId" jdbcType="BIGINT" />
+    <id column="student_id" property="studentId" jdbcType="BIGINT" />
+    <result column="appoint_time" property="appointTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    book_id, student_id, appoint_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.xixi.bean.AppointmentKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from appointment
+    where book_id = #{bookId,jdbcType=BIGINT}
+      and student_id = #{studentId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.xixi.bean.AppointmentKey" >
+    delete from appointment
+    where book_id = #{bookId,jdbcType=BIGINT}
+      and student_id = #{studentId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.xixi.bean.Appointment" >
+    insert into appointment (book_id, student_id, appoint_time
+      )
+    values (#{bookId,jdbcType=BIGINT}, #{studentId,jdbcType=BIGINT}, #{appointTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xixi.bean.Appointment" >
+    insert into appointment
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="bookId != null" >
+        book_id,
+      </if>
+      <if test="studentId != null" >
+        student_id,
+      </if>
+      <if test="appointTime != null" >
+        appoint_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="bookId != null" >
+        #{bookId,jdbcType=BIGINT},
+      </if>
+      <if test="studentId != null" >
+        #{studentId,jdbcType=BIGINT},
+      </if>
+      <if test="appointTime != null" >
+        #{appointTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xixi.bean.Appointment" >
+    update appointment
+    <set >
+      <if test="appointTime != null" >
+        appoint_time = #{appointTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where book_id = #{bookId,jdbcType=BIGINT}
+      and student_id = #{studentId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xixi.bean.Appointment" >
+    update appointment
+    set appoint_time = #{appointTime,jdbcType=TIMESTAMP}
+    where book_id = #{bookId,jdbcType=BIGINT}
+      and student_id = #{studentId,jdbcType=BIGINT}
+  </update>
+</mapper>

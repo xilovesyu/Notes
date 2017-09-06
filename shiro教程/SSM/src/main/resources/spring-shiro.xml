@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <!--web.xml中shiro的filter对应的bean-->
+    <!-- Shiro 的Web过滤器 -->
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"/>
+        <!-- loginUrl认证提交地址，如果没有认证将会请求此地址进行认证，请求此地址将由formAuthenticationFilter进行表单认证 -->
+        <property name="loginUrl" value="/tologin"/>
+        <!--认证成功统一跳转到first.actio，建议不配置，不配置的话shiro认证成功会自动到上一个请求路径-->
+        <!-- <property name="successUrl" value="/first.action"/> -->
+        <property name="unauthorizedUrl" value="/tologin"/>
+        <!-- 过虑器链定义，从上向下顺序执行，一般将/**放在最下边 -->
+        <property name="filterChainDefinitions">
+            <value>
+                <!--对静态资源设置匿名访问-->
+                /bootstrap/**=anon
+                /jquery/**=anon
+
+
+                <!--/**=anon 表示所有的url都可以匿名访问，anon是shiro中一个过滤器的简写，关于shiro中的过滤器介绍见-->
+                /**=anon
+                <!-- -->
+            </value>
+        </property>
+    </bean>
+
+    <!--securityManage-->
+    <!-- 安全管理器 -->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="sampleRealm"/>
+    </bean>
+    <!-- 凭证匹配器 -->
+    <bean id="credentialsMatcher" class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+        <property name="hashAlgorithmName" value="md5"/>
+        <property name="hashIterations" value="1"/>
+    </bean>
+    <!--自定义realm-->
+    <!--<bean id="sampleRealm" class="org.apache.shiro.realm.jdbc.JdbcRealm">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="authenticationQuery" value="select password, salt from user where name = ?"/>
+        &lt;!&ndash;<property name="userRolesQuery" value="SELECT name FROM shiro_role LEFT JOIN shiro_user_role ON shiro_role.id = shiro_user_role.role_id LEFT JOIN shiro_user ON shiro_user_role.user_id = shiro_user.id WHERE shiro_user.username = ?"/>
+        <property name="permissionsQuery" value="SELECT permission FROM shiro_role_permission LEFT JOIN shiro_role ON shiro_role_permission.role_id = shiro_role.id WHERE shiro_role.name = ?"/>&ndash;&gt;
+        <property name="permissionsLookupEnabled" value="true"/>
+        <property name="saltStyle" value="COLUMN"/>
+        &lt;!&ndash;<property name="credentialsMatcher" ref="credentialsMatcher"/>&ndash;&gt;
+    </bean>-->
+    <bean id="sampleRealm" class="com.xixi.realm.UserRealm">
+        <!-- 配置密码匹配器 -->
+        <property name="credentialsMatcher" ref="credentialsMatcher"/>
+    </bean>
+
+
+    <!-- 2.数据库连接池 -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <!-- 配置连接池属性 -->
+        <property name="driverClass" value="${jdbc.driver}"/>
+        <property name="jdbcUrl" value="${jdbc.url}"/>
+        <property name="user" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+
+        <!-- c3p0连接池的私有属性 -->
+        <property name="maxPoolSize" value="30"/>
+        <property name="minPoolSize" value="10"/>
+        <!-- 关闭连接后不自动commit -->
+        <property name="autoCommitOnClose" value="false"/>
+        <!-- 获取连接超时时间 -->
+        <property name="checkoutTimeout" value="10000"/>
+        <!-- 当获取连接失败重试次数 -->
+        <property name="acquireRetryAttempts" value="2"/>
+    </bean>
+</beans>

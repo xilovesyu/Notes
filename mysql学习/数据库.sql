@@ -131,3 +131,420 @@ alter table 表名 add unique key(number);
 -- 主键索引primary key ，唯一索引unique key ，全文索引fulltext index，普通索引index
 
 
+--- 主键冲突：更新
+insert into [表名] values() on duplicate  key update [字段名]='' ;
+--- 主键冲突：替换
+insert into [表名] values() ;
+replace into [表名] values();
+
+--- 蠕虫赋值
+-- 复制表结构
+create table 表名 like 数据库.表名;
+
+insert into 表名[(字段列表)] select * from 表名[(字段名)];
+
+--- 高级更新
+update 表名 set 字段名='' where 查询条件 limit 个数;
+
+---- 高级删除
+delete from 表名 where 查询条件 limit 个数;
+
+truncate 表名;--- 先删除表，然后重新建表
+
+--- 查询数据
+select select选项 字段列表/* from 数据源 [where] [group  by][having][orderby]; 
+
+-- select 选项：all（默认）或者distinct
+
+-- 字段列表 ：字段名 [as] 别名
+
+-- 数据源：单表数据源，多表数据源（笛卡儿积，尽量避免）
+
+-- where 子句： 
+	判断条件：运算符>,<,>=,<=,!=,<>,=,like,between and,in,not in
+	          逻辑运算符:and，or，not
+
+-- 分组的意思：为了统计数据，sql提供了一系列的统计函数
+		count()[每组记录数],max()[每组最大值],min()，avg(),sum();
+
+-- 多字段分组 
+
+-- having子句：where能做的having都能做，反之不行
+	1.分组统计的结果或者统计函数都只能用having使用（having count(*)>2）
+ 
+--  order by 
+
+-- limit： limit 2：限制个数 limit 0,2（前两个） limit 2,2 （3,4个）
+	可以用来分页
+	length：数量
+	offset：（页码-1）*length
+
+
+连接分为四类：内链接，外连接，自然连接，交叉连接
+交叉连接：cross join -> 左表 cross join 右表
+
+内连接：[inner] join(从左表取出每一条记录，在右表中匹配，匹配是某个条件，在左表中和右表中相同才会保留)
+	左表 inner join 右表 on 左表.字段=右表.字段
+
+外连接 outer join，以某张表为主，取出里面的所有记录，然后每条与另外一张表进行连接，不管能不能匹配上条件，最终都会保留，能匹配正确保留，不能匹配，其它表字段置空
+	外连接分为两种：左外连接left join（左表为主表）和right join（右表为主表）
+	语法：左表 left/right join 右表 on 左表.字段=右表.字段
+
+自然连接：natural join 又分为自然内连接（natural  join）和自然外连接（natural left/right  join）
+
+
+
+--- 外键
+--创建表的时候增加外键，在所有的表字段之后，使用foregin key(字段) references 表名(字段)；
+create table my_foregin1(
+	id int primary key auto_increment,
+	name varchar(20) not null comment '学生姓名',
+	c_id int comment '班级id',
+	constraint 'fk_c_id' foreign key(c_id) references my_class(id)
+)charset utf8;
+---显示的是MUL（字段本身一个索引，还有一个外键）
+
+---新增表之后增加外键：修改表结构
+
+Alter Table `ym` Add Constraint `fk_author` Foreign Key (`au_id`) References `author` (`id`);   
+
+---修改外键
+-- 外键不可修改，只能先删除后新增。
+
+---删除外键
+alter table 表名 drop foreign key 外键名;
+
+外键默认作用有俩点，一个对父表，一个对子表
+	对子表约束：插入的数据中外键字段必须保证父表中有
+	对父表数据进行写操作（删和改）
+
+外键条件
+外键要存在：首先必须保证表的存储引擎是innodb
+	外键字段的字段类型必须与父表的主键类型完全一致
+
+外键约束
+除了默认作用，还可以通过对外键的需求定制操作。
+有三种模式，都是针对父表的约束
+district 严格模式（默认），父表不能删除或者更新一个已经被子表数据引用的记录
+cascade 级联模式，父表的操作，对应子表关联的数据也更着操作
+set null 置空模式，父表操作之后，子表对应的数据（外键字段置空）
+通常一个合理的做法是删除的时候子表置空，更新的时候子表级联操作
+foreign key (外键字段) references 父表(主表字段) on delete set null on  update cascade；
+
+
+
+
+---查询
+
+1.联合查询 Union
+	select 语句1 Union [union选项] select 语句2
+	选项：All，Distinct
+	只要数据类型一样
+
+2.子查询
+	子查询的分类
+		1.按位置分类：
+			from子查询，where子查询，exists子查询
+		2.按结果分类（根据得到的数据进行分类）：
+			标量子查询（得到的结果是一行一列）where之后	
+			列子查询（得到的结果一列多行）where之后
+			行子查询（得到的结果多列一行（多行多列））where之后
+
+			表子查询（得到的结果是多行多列）（出现在from之后）
+
+			---select * from my_student where  (age,height)=(select max(age),max(height) from my_student);
+
+
+--- 视图
+	有结构没结果的虚拟表
+
+  创建视图
+   create view 视图名字 as select 语句；
+
+  查看视图
+   类似于表的查看方式，show tables;desc tablename;show create table/view  tablename;
+
+  视图主要为了方便查询
+
+  修改视图
+   alter view 视图名字 as select 新语句;
+ 
+  删除视图
+   drop view viewname;
+  
+ 指定视图算法
+   create algorithm=TempTable/Merge view 视图名 as select；
+   TempTable 会先执行select在执行外部的select语句
+   Merge 会合并select
+
+
+
+
+事务安全
+ 事务：一系列要发生的连续操作
+ 事务安全：一种保护连续操作同时满足（实现）的一种机制
+
+手动事务：
+	1.开始事务（告诉系统以下所有的操作不要直接写入到数据库，先放到事务日志）
+	  Start transaction；
+	2.事务操作
+	3.提交事务（操作成功，同步到数据表 commit） 或者回滚事务（直接清空日志表 rollback）
+
+
+回滚点
+在某个成功的操作完成之后，后续的操作有可能成功有可能失败。不管成功还是失败，前面操作都已经成功，可以在当前成功的一个位置，设置一个点，可以供后续失败操作返回到该位置，而不是返回所有操作，这个点称之为回滚点。
+设置回滚点语法：savepoint 回滚点名字
+回到回滚点语法：rollback to 回滚点名字
+
+1.start transaction;
+2.----张三加钱
+ update myaccount set money=money+10 where id=1;
+  --设置回滚点
+  savepoint sp1;
+  ----银行扣税
+	update myaccount set money=money-0.2 where id=2;
+ rollback to sp1;
+
+
+ 事务特性：
+ ACID：
+	A：原子性，事务整个操作是一个整体，不可分割，要么全部成功，要么全部失败
+	C：一致性，事务操作的前后，数据表中的数据没有变化
+	I：隔离性，事务操作是相互隔离不受影响
+	D：持久性或者永久性，数据一旦提交，不可改变
+锁机制：innodb默认是行锁，但是如果在事务操作过程中没有用索引进行操作，会升级到表锁。
+
+
+变量
+ 系统变量
+	系统定义好的变量：如autocommit，auto_increment_increment;
+	查看系统变量：show variables;
+	查看具体变量值：select @@变量名：【select @@version,select @@autocommit select @@auto_increment_offset】
+	修改系统变量：修改系统变量分为两种方式：会话级别和全局级别。
+	会话级别：set autocommit=0；set @@autocommit=0；
+	全局级别：set global autocommit=0；
+ 自定义变量
+	定义变量：set @name='值'
+	查看变量 select @name；
+
+
+触发器
+ 事先为某张表绑定好一段代码，当表中的某些内容发生改变的时候（增删改）系统会自动触发代码
+
+触发器：事件类型，触发时间，触发对象
+  事件类型：增删改，insert,delete，update
+  触发时间：前后before和after
+  触发对象：表中的每一条记录
+
+
+--创建触发器
+-- 临时修改语法结束符
+delimiter 自定义符号:后续代码只有碰到自定义符号才算结束
+
+create trigger 触发器的名字 触发时间 事件类型 on 表名 for each row
+begin
+   ---触发器内容，每行内容都必须用语句结束符分号
+end
+-- 语句结束符
+自定义符号
+
+---将临时修改改正
+delimiter  ;
+
+查看触发器 show triggers[\G];show create trigger 触发器名字;
+
+删除触发器
+drop trigger 触发器名字;
+
+触发器中old代表旧记录，new代表是新纪录（删除没有new，插入没有old）
+
+
+
+create trigger [trigger_name] [trigger_time] [trigger_event] 
+on [table_name] for each row [trigger_stmt]
+
+CREATE TABLE account(acct_num INT ,amount DECIMAL(10,2));
+CREATE TRIGGER ins_sum BEFORE INSERT ON account
+FOR EACH ROW SET @SUM=@SUM+new.amount;
+
+
+
+---分支结构
+if 条件判断 then 满足条件要执行的代码 [else 不满足条件要执行的代码] end if
+	
+触发器结合if分支，
+delimiter  %%;
+create trigger before_order before insert on my_order for each row 
+begin
+  --判断商品是够足够
+	
+ -- -获取商品库存，商品库存存在表中
+	select inv from my_goods where id=new.g_id into @inv;
+	if @inv < new.g_number then
+
+end
+%%
+
+delimiter  ;
+
+-- 循环结构
+while 循环
+[循环名字:]while 条件判断 do 满足条件要执行的循环代码，并变更循环条件 endwhile
+while中有iterate和leave
+使用方式 iterate/leave 循环名字
+
+		
+
+
+---- 函数
+系统函数：直接调用即可。通过select调用。
+substring，字符为单位，（str,pos(从1开始),len） set @cn='你好啊' select substring(@cn,1,1);
+char_length,字符长度
+length：字节长度
+instr：判断字符串是否在某个具体的字符串中存在 instr(@cn,'姐')
+lpad：左填充，将字符串按照某个指定的填充方式填充到指定的长度（str,length,padstr）
+insert:替换，找到目标位置，然后替换新的字符串 （str,pos,len，newpos,newstr）
+strcmp:字符串比较
+
+自定义函数
+函数名，参数列表，返回值，函数体
+创建语法
+create function 函数名([形参列表]) returns 数据类型
+begin
+--函数体
+--返回值：return 类型（指定数据类型）
+end
+
+查看函数
+show function status [like 'pattern']
+show create  function display1;
+
+修改函数&&删除函数
+只能删除
+drop function 函数名；
+
+参数列表
+-- 计算1到指定数之间的和
+delimiter $$
+create function display2(int_1 int) returns int
+begin
+-- 定义变量
+	set @i=1;
+	set @res=0;
+	while @i <=int_1 do
+		set @res=@res+@i;
+		set @i=@i+1;
+	end while;
+-- 返回值
+return @res;
+
+end
+$$
+delimiter  ;
+
+
+全局变量和局部变量
+全局变量：使用 set关键字声明，使用@符号
+局部变量：使用declare关键字声明，没有@符号，只能在函数体之前
+delimiter $$
+create function display3(int_1 int) returns int
+begin
+	-- 定义变量
+	declare i int default 1;
+	declare res int default 0;
+
+	-- 循环判断
+	mywhile:while i <=int_1 do
+	  if i%5 =0 then
+		-- 修改循环条件
+		set i=i+1;
+		-- 不符合条件
+		iterate mywhile;
+	  end if;
+
+	  -- 相加
+	  set res=res+i;
+	  set i=i+1;
+	end while;
+return res;
+end
+$$
+delimiter  ;
+
+
+
+---存储过程
+
+
+create  procedure [procedure_name] ([procedure prameter]) [characteristics]
+begin
+ routine_body
+end
+
+-- procedure parameter指定存储过程的参数列表，列表形式如下：
+[IN|OUT|INOUT] param_name type
+
+--举例
+create procedure pro1()
+begin
+	--过程体
+end
+
+存储过程没有返回值，不能用select调用
+调用关键字为call pro1();
+
+修改删除过程
+drop procedure 过程名；
+
+过程参数：
+过程还有自己的类型限定三种类型
+in：只能给内部使用（值传递）,可以是数值也可以是变量
+out：值允许过程内部使用（不用外部数据），给外部使用，（外部数据先清空才会到内部）
+inout：外部可以在内部使用，内部也可以修改也可给外部使用（引用传递）
+
+
+delimiter $$
+create  procedure pro2(in int_1 int,out int_2 int,inout int_3 int)
+begin
+   -- 先查看三个变量
+   select int_1,int_2,int_3;
+   set int_1=10;
+   set int_2=100;
+   set int_3=1000;
+ select int_1,int_2,int_3;
+ select @int_1,@int_2;
+ set @int_1='a';
+ set @int_2='b';
+ select @int_1,@int_2;
+end
+$$
+delimiter ;
+
+
+set @int_1=3;set @int_2=4;
+call pro1(3,@int_1,@int_2);
+
+
+
+--数据备份与还原
+数据表备份，单表数据备份，sql备份，增量备份
+
+  单表数据备份：
+	select * into outfile 'd://a.txt' [fields 字段处理][ lines 行处理] from my_student
+
+	fields 字段处理
+	 Enclosed by:字段使用什么内容包裹
+	 Terminated by：字段以什么结束 默认tab键
+	 Escaped by：特殊符号用什么方式处理，默认是'\\'
+	lines 行处理
+	 starting by 以什么开始一行
+	 Terminated by：以什么结束默认\r\n
+  
+	单表数据还原（必须保证表结构存在）
+	  load data infile 文件所在路径 into table 表名[字段列表] [fields 字段处理][lines 行处理]
+
+  sql备份
+	mysqldump -hPup 数据库名字[数据表名字][数据表 名字1] > 重定向文件名
+
+	还原：mysql -hPup 数据库名字 < 备份文件（单表或多表）
+		source 文件路径（可以还原单表多表）
